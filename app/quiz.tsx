@@ -27,16 +27,15 @@ export default function QuizScreen() {
 
   const askQuestion = () => {
     console.log("juyfuyfu");
-    
-    alert(
-      "Питання",
-    //   questions[index].question,
-    //   [
-    //     { text: "Так", onPress: () => handleAnswer(questions[index].temperament) },
-    //     { text: "Ні", onPress: () => handleAnswer(null) }
-    //   ]
-    );
-  };
+
+    const answer = prompt(questions[index].question + " (Так/Ні)");
+
+    if (answer && answer.toLowerCase() === "так") {
+        handleAnswer(questions[index].temperament);
+    } else {
+        handleAnswer(null);
+    }
+};
 
   return (
     <View style={styles.container}>
